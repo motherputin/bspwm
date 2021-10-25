@@ -1,0 +1,97 @@
+# terminal emulator
+super + Return
+	kitty
+
+# webbrowser
+alt + Return 
+	firefox
+
+# media keys
+XF86AudioRaiseVolume
+	/home/user/.config/scripts/volume.sh up
+
+XF86AudioLowerVolume
+	/home/user/.config/scripts/volume.sh down
+
+XF86AudioMute
+	/home/user/.config/scripts/volume.sh mute
+
+#XF86MonBrightnessUp
+#	/home/alice/.config/scripts/brightness.sh up
+
+#XF86MonBrightnessDown
+#	/home/alice/.config/scripts/brightness.sh down
+
+# power keys
+super + Insert
+	systemctl hibernate
+
+super + Print
+	systemctl reboot
+
+super + Delete
+	systemctl poweroff
+
+# lockscreen
+super + shift + p
+	betterlockscreen -l
+
+# program launcher
+super + @space
+	rofi -show drun
+
+# quit/restart bspwm
+super + shift + {c,v}
+	bspc {quit,wm -r}
+
+# close and kill
+super + {_,shift + }q
+	bspc node -{c,k}
+
+# send the newest marked node to the newest preselected node
+super + y
+	bspc node newest.marked.local -n newest.!automatic.local
+
+# move tiled window
+alt + {h,j,k,l}
+	bspc node -s {west,south,north,east}
+
+# set the window state
+super + {b,n,m}
+	bspc node -t {tiled,floating,~fullscreen}
+
+# focus the node in the given direction
+super + {h,j,k,l}
+	bspc node -{f,s} {west,south,north,east}
+
+# focus the next/previous desktop in the current monitor
+super + bracket{left,right}
+	bspc desktop -f {prev,next}.local
+
+# focus or send to the given desktop
+super + {_,shift + }{1-9,0}
+	bspc {desktop -f,node -d} '^{1-9,10}'
+
+# preselect the direction
+super + {shift + }{h,j,k,l}
+	bspc node -p {west,south,north,east}
+
+# preselect the ratio
+super + ctrl + {1-9}
+	bspc node -o 0.{1-9}
+
+# cancel the preselection for the focused node
+super + Escape
+	bspc node -p cancel
+
+# expand a window by moving one of its side outward
+super + alt + {h,j,k,l}
+	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+
+# contract a window by moving one of its side inward
+super + alt + shift + {h,j,k,l}
+	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+
+# move a floating window
+super + {Left,Down,Up,Right}
+	bspc node -v {-20 0,0 20,0 -20,20 0}
