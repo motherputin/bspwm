@@ -1,0 +1,152 @@
+[global/wm]
+
+[bar/mybar]
+override-redirect = true
+wm-restack = bspwm
+fixed-center = true
+height = 18
+background = #111111
+foreground = #6A6A6A
+spacing = 2
+module-margin = 2
+font-0 = "Iosevka Custom:size=9;2"
+font-1 = "Siji:size=20;1"
+
+
+modules-left = workspaces
+modules-center = pulseaudio
+modules-right = date
+
+tray-position = right
+tray-detached = false
+tray-maxsize = 16
+tray-transparent = false
+tray-background = #111111
+tray-offset-x = 0
+tray-offset-y = 0
+tray-padding = 4
+tray-scale = 1.0
+
+
+[module/date]
+type = internal/date
+
+interval = 1.0
+
+time = %H:%M:%S
+time-alt = %d %b
+format =  <label>
+
+label = %time%
+
+[module/backlight]
+type = internal/backlight
+
+card = intel_backlight
+enable-scroll = true
+
+format =<ramp><label>
+
+label = %percentage%%
+
+ramp-0 =🌕
+ramp-1 =🌔
+ramp-2 =🌓
+ramp-3 =🌒
+ramp-4 =🌑
+
+
+[module/pulseaudio]
+
+type = internal/pulseaudio
+
+sink = alsa_output.pci-0000_12_00.3.analog-stereo
+
+use-ui-max = true
+
+interval = 5
+
+format-volume = <ramp-volume> <label-volume>
+
+format-muted = <label-muted>
+
+label-volume = %percentage%%
+
+label-muted = 
+label-muted-foreground = #6A6A6A
+
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+
+
+[module/workspaces]
+type = internal/bspwm
+
+pin-workspaces = true
+inline-mode = false
+
+enable-click = true
+enable-scroll = true
+reverse-scroll = true
+
+format = <label-state>
+
+label-monitor = %name%
+
+label-focused =
+label-focused-foreground = #FFFFFF
+label-focused-padding = 1
+
+label-occupied =
+label-occupied-foreground = #6A6A6A
+label-occupied-padding = 1
+
+label-empty =
+label-empty-foreground = #6A6A6A
+label-empty-padding = 1
+
+label-urgent =
+label-urgent-foreground = #FFFFFF
+label-urgent-padding = 1
+
+
+[module/battery]
+type = internal/battery
+
+full-at = 99
+
+battery = BAT0
+adapter = ADP0
+
+poll-interval = 5
+
+time-format = %H:%M
+
+format-charging =<animation-charging> <label-charging>
+
+format-discharging =<animation-discharging> <label-discharging>
+
+format-full =  <label-full>
+
+label-charging =%percentage%%  %time%
+
+label-discharging =%percentage%%  %time%
+
+label-full = %percentage%%
+
+animation-charging-0 =
+animation-charging-1 =
+animation-charging-2 =
+animation-charging-3 =
+animation-charging-4 =
+
+animation-charging-framerate = 1500
+
+animation-discharging-0 =
+animation-discharging-1 =
+animation-discharging-2 =
+animation-discharging-3 =
+animation-discharging-4 =
+
+animation-discharging-framerate = 1500
