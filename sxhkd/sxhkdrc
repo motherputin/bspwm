@@ -3,8 +3,16 @@ super + Return
 	kitty
 
 # webbrowser
-alt + Return 
+super + shift + Return 
 	firefox
+
+#file manager
+alt + Return
+	pcmanfm
+
+#text editor
+alt + shift + Return
+	emacs
 
 # media keys
 XF86AudioRaiseVolume
