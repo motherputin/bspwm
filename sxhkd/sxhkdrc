@@ -1,10 +1,10 @@
 # terminal emulator
 super + Return
-	kitty
+	alacritty
 
 # webbrowser
 super + shift + Return 
-	firefox
+	chromium
 
 #file manager
 alt + Return
@@ -25,10 +25,10 @@ XF86AudioMute
 	/home/user/.config/scripts/volume.sh mute
 
 #XF86MonBrightnessUp
-#	/home/alice/.config/scripts/brightness.sh up
+	/home/alice/.config/scripts/brightness.sh up
 
 #XF86MonBrightnessDown
-#	/home/alice/.config/scripts/brightness.sh down
+	/home/alice/.config/scripts/brightness.sh down
 
 # power keys
 super + Insert
@@ -74,7 +74,7 @@ super + {h,j,k,l}
 
 # focus the next/previous desktop in the current monitor
 super + bracket{left,right}
-	bspc desktop -f {prev,next}.local
+	bspc node --to-monitor {prev,next}
 
 # focus or send to the given desktop
 super + {_,shift + }{1-9,0}
