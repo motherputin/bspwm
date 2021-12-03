@@ -1,6 +1,6 @@
 # terminal emulator
 super + Return
-	alacritty
+	kitty
 
 # webbrowser
 super + shift + Return 
@@ -16,19 +16,19 @@ alt + shift + Return
 
 # media keys
 XF86AudioRaiseVolume
-	/home/user/.config/scripts/volume.sh up
+	pulsemixer --change-volume +10
 
 XF86AudioLowerVolume
-	/home/user/.config/scripts/volume.sh down
+	pulsemixer --change-volume -10
 
 XF86AudioMute
-	/home/user/.config/scripts/volume.sh mute
+	pulsemixer --toggle-mute
 
-#XF86MonBrightnessUp
-	/home/alice/.config/scripts/brightness.sh up
+XF86MonBrightnessUp
+	light -A 10
 
-#XF86MonBrightnessDown
-	/home/alice/.config/scripts/brightness.sh down
+XF86MonBrightnessDown
+	light -U 10
 
 # power keys
 super + Insert
@@ -39,10 +39,6 @@ super + Print
 
 super + Delete
 	systemctl poweroff
-
-# lockscreen
-super + shift + p
-	betterlockscreen -l
 
 # program launcher
 super + @space

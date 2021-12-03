@@ -69,8 +69,7 @@ full-at = 99
 battery = BAT0
 adapter = ADP0
 poll-interval = 5
-time-format = %H:%M
-format-charging =charging: %percentage%%
-format-discharging =bat: %percentage%%
-
+label-charging = charging: %percentage&&
+label-discharging = bat: %percentage%%
+label-full = fully charged
 
