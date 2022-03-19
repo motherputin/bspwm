@@ -1,18 +1,10 @@
 # terminal emulator
 super + Return
-	kitty
+	alacritty
 
 # webbrowser
-super + shift + Return 
-	chromium
-
-#file manager
-alt + Return
-	pcmanfm
-
-#text editor
-alt + shift + Return
-	emacs
+alt + Return 
+	firefox
 
 # media keys
 XF86AudioRaiseVolume
@@ -61,8 +53,8 @@ alt + {h,j,k,l}
 	bspc node -s {west,south,north,east}
 
 # set the window state
-super + {b,n,m}
-	bspc node -t {tiled,floating,~fullscreen}
+super + {f,m}
+	bspc node -t {~floating,~fullscreen}
 
 # focus the node in the given direction
 super + {h,j,k,l}
