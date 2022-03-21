@@ -32,6 +32,9 @@ super + Print
 super + Delete
 	systemctl poweroff
 
+super + p
+	slock
+
 # program launcher
 super + @space
 	rofi -show drun
@@ -53,8 +56,8 @@ alt + {h,j,k,l}
 	bspc node -s {west,south,north,east}
 
 # set the window state
-super + {f,m}
-	bspc node -t {~floating,~fullscreen}
+super + {t,f,m}
+	bspc node -t {tiling,floating,~fullscreen}
 
 # focus the node in the given direction
 super + {h,j,k,l}
