@@ -56,8 +56,17 @@ alt + {h,j,k,l}
 	bspc node -s {west,south,north,east}
 
 # set the window state
-super + {t,f,m}
-	bspc node -t {tiling,floating,~fullscreen}
+super + m
+	bspc node -t ~fullscreen
+
+super + f
+	bspc node -t floating
+
+super + t
+	bspc node -t tiled
+
+super + shift + t
+	bspc node -t ~pseudo_tiled
 
 # focus the node in the given direction
 super + {h,j,k,l}
