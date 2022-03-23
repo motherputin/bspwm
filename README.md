@@ -1,4 +1,4 @@
-~bspwm light-theme dots~
+bspwm light-theme dots
 
 requirements:
 -bspwm
