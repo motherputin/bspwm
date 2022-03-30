@@ -2,17 +2,41 @@
 
 [bar/mybar]
 fixed-center = true
-height = 18
-background = #fefefe
-foreground = #525252
-spacing = 2
-module-margin = 2
-font-0 = "Diavlo_BOOK_II_37 Custom:size=9;2"
+height = 24
+background = #161616
+foreground = #b9b9b9
+spacing = 3
+module-margin = 3
+font-0 = "Diavlo_BOOK_II_37 Custom:size=10;2"
 font-1 = "Siji:size=20;1"
 modules-left = workspaces
-modules-right = pulseaudio date
+modules-center = cpu nvidia ram
+modules-right = backlight pulseaudio battery date
 
 wm-restack = bspwm
+
+
+[module/cpu]
+type = internal/cpu
+interval = 0.5
+warn-percentage = 95
+format = <label>
+label = cpu: %percentage%%
+
+
+[module/ram]
+type = internal/memory
+interval = 3
+warn-percentage = 95
+format = <label>
+label = ram: %gb_used%
+
+
+[module/nvidia]
+type = custom/script
+exec = ~/.config/polybar/nvidia.sh
+interval = 10
+
 
 [module/date]
 type = internal/date
@@ -20,7 +44,6 @@ interval = 1.0
 time = %H:%M
 time-alt = %d %b
 format = <label>
-format-padding = 3
 label = %time%
 
 
@@ -29,7 +52,6 @@ type = internal/backlight
 card = intel_backlight
 enable-scroll = true
 format =bri: <label>
-format-padding = 3
 label = %percentage%%
 
 
@@ -40,7 +62,6 @@ use-ui-max = true
 interval = 5
 format-volume = vol: <label-volume>
 format-muted = muted
-format-padding = 3
 label-volume = %percentage%%
 
 
@@ -52,19 +73,18 @@ enable-click = true
 enable-scroll = true
 reverse-scroll = true
 format = <label-state>
-format-padding = 3
 label-monitor = %name%
 label-focused =
-label-focused-foreground = #525252
+label-focused-foreground = #b9b9b9
 label-focused-padding = 1
 label-occupied =
-label-occupied-foreground = #b1b1b1
+label-occupied-foreground = #747474
 label-occupied-padding = 1
 label-empty =
-label-empty-foreground = #d7d7d7
+label-empty-foreground = #747474
 label-empty-padding = 1
 label-urgent =
-label-urgent-foreground = #b1b1b1
+label-urgent-foreground = #ffffff
 label-urgent-padding = 1
 
 
@@ -78,4 +98,3 @@ label-charging = charging: %percentage%%
 label-discharging = bat: %percentage%%
 label-full = fully charged
 label-padding = 3
-

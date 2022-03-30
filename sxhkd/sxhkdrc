@@ -8,29 +8,29 @@ alt + Return
 
 # media keys
 XF86AudioRaiseVolume
-	pulsemixer --change-volume +10
+	pamixer -i 5
 
 XF86AudioLowerVolume
-	pulsemixer --change-volume -10
+	pamixer -d 5
 
 XF86AudioMute
-	pulsemixer --toggle-mute
+	pamixer --toggle-mute
 
 XF86MonBrightnessUp
-	light -A 10
+	light -A 5
 
 XF86MonBrightnessDown
-	light -U 10
+	light -U 5
 
 # power keys
 super + Insert
-	systemctl hibernate
+	loginctl sleep
 
 super + Print
-	systemctl reboot
+	loginctl reboot
 
 super + Delete
-	systemctl poweroff
+	loginctl poweroff
 
 super + p
 	slock
