@@ -1,1 +1,1 @@
-bspwm light-themed dots
+bspwm monochrome(ish) dots
