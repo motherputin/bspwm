@@ -12,6 +12,8 @@ font-1 = "Siji:size=20;1"
 modules-left = workspaces
 modules-center = cpu nvidia ram
 modules-right = backlight pulseaudio battery date
+bottom = true
+
 
 wm-restack = bspwm
 

@@ -23,9 +23,6 @@ XF86MonBrightnessDown
 	light -U 5
 
 # power keys
-super + Insert
-	loginctl sleep
-
 super + Print
 	loginctl reboot
 
@@ -57,7 +54,7 @@ alt + {h,j,k,l}
 
 # set the window state
 super + m
-	bspc node -t ~fullscreen
+	bspc node -t fullscreen
 
 super + f
 	bspc node -t floating
@@ -73,8 +70,11 @@ super + {h,j,k,l}
 	bspc node -{f,s} {west,south,north,east}
 
 # focus the next/previous desktop in the current monitor
-super + bracket{left,right}
+super + shift + bracket{left,right}
 	bspc node --to-monitor {prev,next}
+
+super + bracket{left,right}
+	bspc desktop -f {prev,next}
 
 # focus or send to the given desktop
 super + {_,shift + }{1-9,0}
